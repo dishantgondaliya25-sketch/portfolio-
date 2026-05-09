@@ -1,118 +1,66 @@
 /* =========================================
-   script.js — Premium Portfolio 2025
+   script.js — Premium Portfolio JS
    ========================================= */
-
-// ── Scroll Progress Bar ─────────────────────
-const progressBar = document.getElementById('progressBar');
-window.addEventListener('scroll', () => {
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = (window.scrollY / total) * 100;
-    progressBar.style.width = pct + '%';
-});
 
 // ── Custom Cursor ──────────────────────────
 const cursor = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
+const follower = document.getElementById('cursorFollower');
+let mouseX = 0, mouseY = 0;
+let followerX = 0, followerY = 0;
 
 document.addEventListener('mousemove', (e) => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
 });
 
-(function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    cursorRing.style.left = rx + 'px';
-    cursorRing.style.top = ry + 'px';
-    requestAnimationFrame(animRing);
+(function animateFollower() {
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
 })();
 
-document.querySelectorAll('a, button, .proj-card, .skill-row, .contact-row').forEach(el => {
+document.querySelectorAll('a, button, .proj-card, .skill-item').forEach(el => {
     el.addEventListener('mouseenter', () => {
-        cursor.classList.add('expand');
-        cursorRing.classList.add('expand');
+        cursor.style.transform = 'translate(-50%,-50%) scale(2)';
+        follower.style.width = '52px';
+        follower.style.height = '52px';
+        follower.style.borderColor = 'rgba(201,168,76,0.7)';
     });
     el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('expand');
-        cursorRing.classList.remove('expand');
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+        follower.style.width = '32px';
+        follower.style.height = '32px';
+        follower.style.borderColor = 'rgba(201,168,76,0.4)';
     });
 });
-
-// ── Particle Canvas ────────────────────────
-const canvas = document.getElementById('particleCanvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-class Particle {
-    constructor() { this.reset(); }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 1.5 + 0.3;
-        this.speedX = (Math.random() - 0.5) * 0.3;
-        this.speedY = (Math.random() - 0.5) * 0.3;
-        this.opacity = Math.random() * 0.4 + 0.1;
-        this.color = Math.random() > 0.7 ? '232,93,38' : '100,100,120';
-    }
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-    }
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.color},${this.opacity})`;
-        ctx.fill();
-    }
-}
-
-for (let i = 0; i < 80; i++) particles.push(new Particle());
-
-function animParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animParticles);
-}
-animParticles();
 
 // ── Navbar ─────────────────────────────────
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+const navLinks = document.getElementById('navLinks');
 
 window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 30);
-    const btn = document.getElementById('scrollTopBtn');
-    btn.classList.toggle('visible', window.scrollY > 500);
+    // scroll-to-top
+    const btn = document.getElementById('scrollTop');
+    btn.classList.toggle('visible', window.scrollY > 400);
 });
 
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    navLinks.classList.toggle('open');
 });
 
-document.querySelectorAll('.mob-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
-    });
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// ── Smooth scroll ──────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
+// ── Smooth Scroll ──────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             e.preventDefault();
@@ -121,153 +69,124 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// ── Active Nav Link ─────────────────────────
-const sectionEls = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', () => {
-    let active = '';
-    sectionEls.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) active = s.id;
-    });
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href').slice(1) === active);
-    });
-});
-
 // ── Typing Effect ──────────────────────────
-const roles = ['Laravel Developer', 'Backend Engineer', 'API Architect', 'PHP Specialist', 'Full-Stack Builder'];
-let rIdx = 0, cIdx = 0, deleting = false;
+const roles = ['Laravel Developer', 'Backend Engineer', 'API Architect', 'PHP Specialist'];
+let roleIdx = 0, charIdx = 0, deleting = false;
 const roleEl = document.getElementById('typingRole');
 
 function typeRole() {
-    if (!roleEl) return;
-    const current = roles[rIdx];
+    const current = roles[roleIdx];
     if (!deleting) {
-        roleEl.textContent = current.substring(0, ++cIdx);
-        if (cIdx === current.length) {
+        roleEl.textContent = current.substring(0, ++charIdx);
+        if (charIdx === current.length) {
             deleting = true;
-            return setTimeout(typeRole, 2400);
+            setTimeout(typeRole, 2200);
+            return;
         }
     } else {
-        roleEl.textContent = current.substring(0, --cIdx);
-        if (cIdx === 0) {
+        roleEl.textContent = current.substring(0, --charIdx);
+        if (charIdx === 0) {
             deleting = false;
-            rIdx = (rIdx + 1) % roles.length;
+            roleIdx = (roleIdx + 1) % roles.length;
         }
     }
-    setTimeout(typeRole, deleting ? 45 : 85);
-}
-setTimeout(typeRole, 1200);
-
-// ── Reveal on Scroll ───────────────────────
-const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const delay = parseFloat(el.getAttribute('data-delay') || 0) * 1000;
-        setTimeout(() => el.classList.add('visible'), delay);
-        revealObs.unobserve(el);
-    });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal-card').forEach(el => revealObs.observe(el));
-
-// ── Skill Bar Animation ────────────────────
-const skillObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const fill = entry.target;
-        const w = fill.getAttribute('data-w');
-        setTimeout(() => fill.style.width = w + '%', 200);
-        skillObs.unobserve(fill);
-    });
-}, { threshold: 0.4 });
-
-document.querySelectorAll('.skill-fill').forEach(el => skillObs.observe(el));
-
-// ── Animated Stat Counters ─────────────────
-function animCounter(el, target, duration = 1400) {
-    const start = performance.now();
-    const update = (now) => {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target);
-        if (progress < 1) requestAnimationFrame(update);
-    };
-    requestAnimationFrame(update);
+    setTimeout(typeRole, deleting ? 50 : 90);
 }
 
-const counterObs = new IntersectionObserver((entries) => {
+window.addEventListener('load', () => setTimeout(typeRole, 800));
+
+// ── Skill Bars (Intersection Observer) ─────
+const skillFills = document.querySelectorAll('.skill-fill');
+const skillObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const numEl = entry.target.querySelector('.stat-number');
-        if (numEl) {
-            const target = parseInt(numEl.getAttribute('data-target'));
-            animCounter(numEl, target);
+        if (entry.isIntersecting) {
+            const fill = entry.target;
+            const w = fill.getAttribute('data-w');
+            fill.style.width = w + '%';
+            skillObserver.unobserve(fill);
         }
-        counterObs.unobserve(entry.target);
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.3 });
 
-document.querySelectorAll('.stat-card').forEach(el => counterObs.observe(el));
+skillFills.forEach(fill => skillObserver.observe(fill));
 
-// ── Timeline delay set ─────────────────────
-document.querySelectorAll('.timeline-item').forEach((item, i) => {
-    item.style.setProperty('--delay', (i * 0.15) + 's');
+// ── Fade-in on Scroll ──────────────────────
+const fadeEls = document.querySelectorAll(
+    '.skill-item, .proj-card, .exp-card, .contact-link, .stat-item, .about-grid, .contact-layout, .exp-layout'
+);
+
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = (i * 0.04) + 's';
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+fadeEls.forEach(el => {
+    el.classList.add('fade-in');
+    fadeObserver.observe(el);
 });
 
 // ── Contact Form ───────────────────────────
 function handleSend() {
-    const fields = {
-        name: document.getElementById('fname'),
-        email: document.getElementById('femail'),
-        subject: document.getElementById('fsubject'),
-        message: document.getElementById('fmessage')
-    };
-    const msgEl = document.getElementById('formMsg');
-    const btn = document.getElementById('sendBtn');
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const subject = document.getElementById('fsubject').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+    const msgEl   = document.getElementById('formMsg');
+    const btn     = document.getElementById('sendBtn');
 
-    Object.values(fields).forEach(f => f.style.borderColor = '');
-    msgEl.className = 'form-msg';
+    const inputs = [
+        document.getElementById('fname'),
+        document.getElementById('femail'),
+        document.getElementById('fsubject'),
+        document.getElementById('fmessage')
+    ];
 
-    let hasError = false;
-    Object.values(fields).forEach(f => {
-        if (!f.value.trim()) { f.style.borderColor = '#dc2626'; hasError = true; }
-    });
+    inputs.forEach(inp => inp.style.borderColor = '');
+    msgEl.className = 'form-message';
 
-    if (hasError) {
+    if (!name || !email || !subject || !message) {
+        inputs.forEach(inp => {
+            if (!inp.value.trim()) inp.style.borderColor = '#f87171';
+        });
         msgEl.textContent = 'Please fill in all fields.';
         msgEl.classList.add('error');
         return;
     }
 
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRe.test(fields.email.value.trim())) {
-        fields.email.style.borderColor = '#dc2626';
-        msgEl.textContent = 'Please enter a valid email.';
+    if (!emailRe.test(email)) {
+        document.getElementById('femail').style.borderColor = '#f87171';
+        msgEl.textContent = 'Please enter a valid email address.';
         msgEl.classList.add('error');
         return;
     }
 
-    btn.querySelector('span').textContent = 'Sending...';
+    btn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
     btn.disabled = true;
 
     setTimeout(() => {
-        msgEl.textContent = "Message sent! I'll get back to you soon.";
+        msgEl.textContent = "Thanks! I'll get back to you soon.";
         msgEl.classList.add('success');
-        Object.values(fields).forEach(f => f.value = '');
-        btn.querySelector('span').textContent = 'Send Message';
+        inputs.forEach(inp => inp.value = '');
+        btn.innerHTML = '<span>Send Message</span> <i class="fas fa-paper-plane"></i>';
         btn.disabled = false;
-    }, 1600);
+    }, 1400);
 }
 
-// ── Proj card mouse spotlight ──────────────
-document.querySelectorAll('.proj-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-        card.querySelector('.proj-shine').style.background =
-            `radial-gradient(circle at ${x}% ${y}%, rgba(232,93,38,0.1) 0%, transparent 60%)`;
+// ── Active Nav Link on Scroll ──────────────
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href').slice(1);
+        link.style.color = href === current ? 'var(--gold)' : '';
     });
 });
