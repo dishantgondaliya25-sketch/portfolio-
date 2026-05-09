@@ -11,19 +11,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cursor -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-follower" id="cursorFollower"></div>
-
-    <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
 
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
-            <div class="logo">
-                <span class="logo-d">D</span><span class="logo-g">G</span>
-            </div>
+            <div class="logo">DG</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link"><span class="nav-num">01</span>Home</a></li>
                 <li><a href="#about" class="nav-link"><span class="nav-num">02</span>About</a></li>
@@ -32,13 +27,11 @@
                 <li><a href="#projects" class="nav-link"><span class="nav-num">05</span>Projects</a></li>
                 <li><a href="#contact" class="nav-link"><span class="nav-num">06</span>Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span><span></span>
-            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span></div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-bg-grid"></div>
         <div class="orb orb-1"></div>
@@ -54,10 +47,10 @@
             </h1>
             <div class="hero-role reveal-up" style="--d:0.35s">
                 <span class="role-line"></span>
-                <span class="role-text" id="typingRole">Laravel Developer</span>
+                <span id="typingRole">Laravel Developer</span>
                 <span class="role-cursor">|</span>
             </div>
-            <p class="hero-sub reveal-up" style="--d:0.5s">2 years crafting robust, scalable web applications<br>from backend architecture to seamless user experiences.</p>
+            <p class="hero-sub reveal-up" style="--d:0.5s">2 years crafting robust, scalable web applications — from backend architecture to seamless user experiences.</p>
             <div class="hero-actions reveal-up" style="--d:0.65s">
                 <a href="#contact" class="btn-glow">Let's Talk</a>
                 <a href="#projects" class="btn-ghost">View Work <i class="fas fa-arrow-right"></i></a>
@@ -69,42 +62,28 @@
             </div>
         </div>
         <div class="hero-scroll-hint">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+            <span>Scroll</span><div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="about">
         <div class="section-label">— About Me</div>
         <div class="about-grid">
             <div class="about-left">
                 <div class="avatar-wrap">
                     <div class="avatar-ring"></div>
-                    <div class="avatar-inner">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="avatar-badge">
-                        <i class="fab fa-laravel"></i>
-                    </div>
+                    <div class="avatar-inner"><i class="fas fa-user"></i></div>
+                    <div class="avatar-badge"><i class="fab fa-laravel"></i></div>
                 </div>
             </div>
             <div class="about-right">
                 <h2 class="section-heading">Turning complex<br><em>problems into</em><br>elegant code.</h2>
                 <p class="about-bio">Backend engineer with 2+ years building enterprise-grade platforms. I specialize in Laravel — from RESTful APIs and OAuth integrations to CRM systems and payment gateways. I care about clean architecture, fast queries, and shipping products that last.</p>
                 <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-num">2+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">6</span>
-                        <span class="stat-label">Projects Shipped</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">10+</span>
-                        <span class="stat-label">Technologies</span>
-                    </div>
+                    <div class="stat-item"><span class="stat-num">2+</span><span class="stat-label">Years Experience</span></div>
+                    <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Projects Shipped</span></div>
+                    <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Technologies</span></div>
                 </div>
                 <div class="about-meta">
                     <div class="meta-row"><i class="fas fa-map-marker-alt"></i> Bangalore, India</div>
@@ -115,87 +94,25 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills -->
     <section id="skills" class="skills">
         <div class="section-label">— Skills</div>
-        <div class="section-top">
-            <h2 class="section-heading">What I<br><em>work with</em></h2>
-        </div>
+        <div class="section-top"><h2 class="section-heading">What I<br><em>work with</em></h2></div>
         <div class="skills-grid">
-            <div class="skill-item" data-pct="90">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fab fa-laravel"></i><span>Laravel</span></div>
-                    <span class="skill-pct">90%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="90"></div></div>
-            </div>
-            <div class="skill-item" data-pct="88">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fab fa-php"></i><span>PHP</span></div>
-                    <span class="skill-pct">88%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="88"></div></div>
-            </div>
-            <div class="skill-item" data-pct="85">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fas fa-code"></i><span>RESTful API Development</span></div>
-                    <span class="skill-pct">85%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
-            </div>
-            <div class="skill-item" data-pct="85">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fas fa-database"></i><span>MySQL & Database Design</span></div>
-                    <span class="skill-pct">85%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
-            </div>
-            <div class="skill-item" data-pct="83">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fas fa-sync"></i><span>Ajax</span></div>
-                    <span class="skill-pct">83%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="83"></div></div>
-            </div>
-            <div class="skill-item" data-pct="82">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fab fa-bootstrap"></i><span>Bootstrap / Tailwind CSS</span></div>
-                    <span class="skill-pct">82%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="82"></div></div>
-            </div>
-            <div class="skill-item" data-pct="80">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fab fa-js"></i><span>JavaScript & jQuery</span></div>
-                    <span class="skill-pct">80%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
-            </div>
-            <div class="skill-item" data-pct="80">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fas fa-tachometer-alt"></i><span>Query Optimization</span></div>
-                    <span class="skill-pct">80%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
-            </div>
-            <div class="skill-item" data-pct="78">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fas fa-credit-card"></i><span>Payment Gateway Integration</span></div>
-                    <span class="skill-pct">78%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="78"></div></div>
-            </div>
-            <div class="skill-item" data-pct="75">
-                <div class="skill-info">
-                    <div class="skill-name-wrap"><i class="fas fa-shield-alt"></i><span>OAuth</span></div>
-                    <span class="skill-pct">75%</span>
-                </div>
-                <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
-            </div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-laravel"></i><span>Laravel</span></div><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-php"></i><span>PHP</span></div><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-code"></i><span>RESTful API Development</span></div><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-database"></i><span>MySQL & Database Design</span></div><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-sync"></i><span>Ajax</span></div><span class="skill-pct">83%</span></div><div class="skill-track"><div class="skill-fill" data-w="83"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-bootstrap"></i><span>Bootstrap / Tailwind CSS</span></div><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-w="82"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-js"></i><span>JavaScript & jQuery</span></div><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-tachometer-alt"></i><span>Query Optimization</span></div><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-credit-card"></i><span>Payment Gateway Integration</span></div><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill" data-w="78"></div></div></div>
+            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-shield-alt"></i><span>OAuth</span></div><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience" class="experience">
         <div class="section-label">— Experience</div>
         <div class="exp-layout">
@@ -214,12 +131,8 @@
                     <h3 class="exp-role">Laravel Developer</h3>
                     <h4 class="exp-company">Bajarangi Soft</h4>
                     <p class="exp-desc">Leading backend development on enterprise-level platforms including CRM systems, social media automation, and multi-tenant web applications. Focused on scalable architecture, API design, and performance optimization.</p>
-                    <div class="exp-tags">
-                        <span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST APIs</span><span>OAuth</span>
-                    </div>
+                    <div class="exp-tags"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST APIs</span><span>OAuth</span></div>
                 </div>
-
-                <!-- Education Card inline here -->
                 <div class="exp-card edu-card">
                     <div class="exp-card-top">
                         <div class="exp-logo-wrap edu-icon"><i class="fas fa-graduation-cap"></i></div>
@@ -230,71 +143,27 @@
                     </div>
                     <h3 class="exp-role">Bachelor's in Computer Application</h3>
                     <h4 class="exp-company">The Future Computer Science College</h4>
-                    <p class="exp-desc">CGPA: <strong>6.7</strong> — Studied core computer science fundamentals, programming, database systems, and software engineering.</p>
+                    <p class="exp-desc">CGPA: <strong>6.7</strong> — Studied core computer science fundamentals, programming, database systems, and software engineering principles.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects" class="projects">
         <div class="section-label">— Projects</div>
-        <div class="section-top">
-            <h2 class="section-heading">Featured<br><em>work</em></h2>
-        </div>
+        <div class="section-top"><h2 class="section-heading">Featured<br><em>work</em></h2></div>
         <div class="projects-grid">
-            <div class="proj-card">
-                <div class="proj-num">01</div>
-                <div class="proj-icon-wrap"><i class="fas fa-users-cog"></i></div>
-                <h3>Torkehub</h3>
-                <p>CRM, Automation & Social Media Management System with multi-channel integrations and workflow automation.</p>
-                <div class="proj-tags"><span>Laravel</span><span>CRM</span><span>Automation</span></div>
-                <div class="proj-hover-line"></div>
-            </div>
-            <div class="proj-card">
-                <div class="proj-num">02</div>
-                <div class="proj-icon-wrap"><i class="fas fa-calendar-check"></i></div>
-                <h3>JKB</h3>
-                <p>Comprehensive Event Management Platform handling scheduling, ticketing, and attendee management at scale.</p>
-                <div class="proj-tags"><span>Laravel</span><span>Events</span><span>Management</span></div>
-                <div class="proj-hover-line"></div>
-            </div>
-            <div class="proj-card">
-                <div class="proj-num">03</div>
-                <div class="proj-icon-wrap"><i class="fas fa-dumbbell"></i></div>
-                <h3>The Gym Faction</h3>
-                <p>Fitness web application for workout tracking, member management, and progress analytics.</p>
-                <div class="proj-tags"><span>Laravel</span><span>Fitness</span><span>Web App</span></div>
-                <div class="proj-hover-line"></div>
-            </div>
-            <div class="proj-card">
-                <div class="proj-num">04</div>
-                <div class="proj-icon-wrap"><i class="fas fa-building"></i></div>
-                <h3>Teknix</h3>
-                <p>B2B platform for elevator manufacturers to manage products, orders, and client relationships.</p>
-                <div class="proj-tags"><span>Laravel</span><span>Manufacturing</span><span>B2B</span></div>
-                <div class="proj-hover-line"></div>
-            </div>
-            <div class="proj-card">
-                <div class="proj-num">05</div>
-                <div class="proj-icon-wrap"><i class="fas fa-industry"></i></div>
-                <h3>Forest Polska</h3>
-                <p>Manufacturer and distributor management system with supply chain tracking and inventory modules.</p>
-                <div class="proj-tags"><span>Laravel</span><span>Distribution</span><span>Supply Chain</span></div>
-                <div class="proj-hover-line"></div>
-            </div>
-            <div class="proj-card">
-                <div class="proj-num">06</div>
-                <div class="proj-icon-wrap"><i class="fas fa-cross"></i></div>
-                <h3>Sanctus</h3>
-                <p>Virtual cemetery web application offering memorial pages, tributes, and family management tools.</p>
-                <div class="proj-tags"><span>Laravel</span><span>Memorial</span><span>Virtual</span></div>
-                <div class="proj-hover-line"></div>
-            </div>
+            <div class="proj-card"><div class="proj-num">01</div><div class="proj-icon-wrap"><i class="fas fa-users-cog"></i></div><h3>Torkehub</h3><p>CRM, Automation & Social Media Management System with multi-channel integrations and workflow automation.</p><div class="proj-tags"><span>Laravel</span><span>CRM</span><span>Automation</span></div><div class="proj-hover-line"></div></div>
+            <div class="proj-card"><div class="proj-num">02</div><div class="proj-icon-wrap"><i class="fas fa-calendar-check"></i></div><h3>JKB</h3><p>Comprehensive Event Management Platform handling scheduling, ticketing, and attendee management at scale.</p><div class="proj-tags"><span>Laravel</span><span>Events</span><span>Management</span></div><div class="proj-hover-line"></div></div>
+            <div class="proj-card"><div class="proj-num">03</div><div class="proj-icon-wrap"><i class="fas fa-dumbbell"></i></div><h3>The Gym Faction</h3><p>Fitness web application for workout tracking, member management, and progress analytics.</p><div class="proj-tags"><span>Laravel</span><span>Fitness</span><span>Web App</span></div><div class="proj-hover-line"></div></div>
+            <div class="proj-card"><div class="proj-num">04</div><div class="proj-icon-wrap"><i class="fas fa-building"></i></div><h3>Teknix</h3><p>B2B platform for elevator manufacturers to manage products, orders, and client relationships efficiently.</p><div class="proj-tags"><span>Laravel</span><span>Manufacturing</span><span>B2B</span></div><div class="proj-hover-line"></div></div>
+            <div class="proj-card"><div class="proj-num">05</div><div class="proj-icon-wrap"><i class="fas fa-industry"></i></div><h3>Forest Polska</h3><p>Manufacturer and distributor management system with supply chain tracking and inventory modules.</p><div class="proj-tags"><span>Laravel</span><span>Distribution</span><span>Supply Chain</span></div><div class="proj-hover-line"></div></div>
+            <div class="proj-card"><div class="proj-num">06</div><div class="proj-icon-wrap"><i class="fas fa-cross"></i></div><h3>Sanctus</h3><p>Virtual cemetery web application offering memorial pages, tributes, and family management tools.</p><div class="proj-tags"><span>Laravel</span><span>Memorial</span><span>Virtual</span></div><div class="proj-hover-line"></div></div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="section-label">— Contact</div>
         <div class="contact-layout">
@@ -302,45 +171,19 @@
                 <h2 class="section-heading">Let's build<br><em>something</em><br>together.</h2>
                 <p class="contact-sub">Open to full-time roles, freelance projects, and interesting collaborations. Drop me a line.</p>
                 <div class="contact-details">
-                    <a href="tel:+919316113282" class="contact-link">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 93161 13282</span>
-                    </a>
-                    <a href="mailto:dishantgondaliya25@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>dishantgondaliya25@gmail.com</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/dishant-gondaliya</span>
-                    </a>
-                    <div class="contact-link no-link">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Bangalore, India</span>
-                    </div>
+                    <a href="tel:+919316113282" class="contact-link"><i class="fas fa-phone"></i><span>+91 93161 13282</span></a>
+                    <a href="mailto:dishantgondaliya25@gmail.com" class="contact-link"><i class="fas fa-envelope"></i><span>dishantgondaliya25@gmail.com</span></a>
+                    <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i><span>linkedin.com/in/dishant-gondaliya</span></a>
+                    <div class="contact-link no-link"><i class="fas fa-map-marker-alt"></i><span>Bangalore, India</span></div>
                 </div>
             </div>
             <div class="contact-right">
                 <div class="contact-form-wrap">
-                    <div class="form-field">
-                        <label>Your Name</label>
-                        <input type="text" id="fname" placeholder="John Doe" class="form-inp">
-                    </div>
-                    <div class="form-field">
-                        <label>Email Address</label>
-                        <input type="email" id="femail" placeholder="john@example.com" class="form-inp">
-                    </div>
-                    <div class="form-field">
-                        <label>Subject</label>
-                        <input type="text" id="fsubject" placeholder="Project Inquiry" class="form-inp">
-                    </div>
-                    <div class="form-field">
-                        <label>Message</label>
-                        <textarea id="fmessage" rows="5" placeholder="Tell me about your project..." class="form-inp"></textarea>
-                    </div>
-                    <button class="btn-glow" id="sendBtn" onclick="handleSend()">
-                        <span>Send Message</span> <i class="fas fa-paper-plane"></i>
-                    </button>
+                    <div class="form-field"><label>Your Name</label><input type="text" id="fname" placeholder="John Doe" class="form-inp"></div>
+                    <div class="form-field"><label>Email Address</label><input type="email" id="femail" placeholder="john@example.com" class="form-inp"></div>
+                    <div class="form-field"><label>Subject</label><input type="text" id="fsubject" placeholder="Project Inquiry" class="form-inp"></div>
+                    <div class="form-field"><label>Message</label><textarea id="fmessage" rows="5" placeholder="Tell me about your project..." class="form-inp"></textarea></div>
+                    <button class="btn-glow" id="sendBtn" onclick="handleSend()"><span>Send Message</span> <i class="fas fa-paper-plane"></i></button>
                     <div id="formMsg" class="form-message"></div>
                 </div>
             </div>
@@ -351,7 +194,7 @@
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-left">
-                <span class="logo"><span class="logo-d">D</span><span class="logo-g">G</span></span>
+                <span class="logo">DG</span>
                 <p>© 2024 Dishant Gondaliya. All Rights Reserved.</p>
             </div>
             <div class="footer-right">
@@ -362,7 +205,6 @@
         </div>
     </footer>
 
-    <!-- Scroll to top -->
     <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
         <i class="fas fa-arrow-up"></i>
     </button>
