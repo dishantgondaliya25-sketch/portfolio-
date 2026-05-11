@@ -1,214 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dishant Gondaliya — Laravel Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dishant Gondaliya — Laravel Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
-    <div class="noise-overlay"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-inner">
-            <div class="logo">DG</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="nav-link"><span class="nav-num">01</span>Home</a></li>
-                <li><a href="#about" class="nav-link"><span class="nav-num">02</span>About</a></li>
-                <li><a href="#skills" class="nav-link"><span class="nav-num">03</span>Skills</a></li>
-                <li><a href="#experience" class="nav-link"><span class="nav-num">04</span>Experience</a></li>
-                <li><a href="#projects" class="nav-link"><span class="nav-num">05</span>Projects</a></li>
-                <li><a href="#contact" class="nav-link"><span class="nav-num">06</span>Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger"><span></span><span></span></div>
-        </div>
-    </nav>
+<div id="progress-bar"></div>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<div class="noise"></div>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="hero-inner">
-            <div class="hero-tag reveal-up" style="--d:0.1s">
-                <span class="dot"></span>Available for opportunities
-            </div>
-            <h1 class="hero-name reveal-up" style="--d:0.2s">
-                <span class="name-line">Dishant</span>
-                <span class="name-line italic">Gondaliya</span>
-            </h1>
-            <div class="hero-role reveal-up" style="--d:0.35s">
-                <span class="role-line"></span>
-                <span id="typingRole">Laravel Developer</span>
-                <span class="role-cursor">|</span>
-            </div>
-            <p class="hero-sub reveal-up" style="--d:0.5s">2 years crafting robust, scalable web applications — from backend architecture to seamless user experiences.</p>
-            <div class="hero-actions reveal-up" style="--d:0.65s">
-                <a href="#contact" class="btn-glow">Let's Talk</a>
-                <a href="#projects" class="btn-ghost">View Work <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="hero-socials reveal-up" style="--d:0.8s">
-                <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank" class="social-chip"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="mailto:dishantgondaliya25@gmail.com" class="social-chip"><i class="fas fa-envelope"></i> Email</a>
-                <a href="tel:+919316113282" class="social-chip"><i class="fas fa-phone"></i> Call</a>
-            </div>
-        </div>
-        <div class="hero-scroll-hint">
-            <span>Scroll</span><div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="section-label">— About Me</div>
-        <div class="about-grid">
-            <div class="about-left">
-                <div class="avatar-wrap">
-                    <div class="avatar-ring"></div>
-                    <div class="avatar-inner"><i class="fas fa-user"></i></div>
-                    <div class="avatar-badge"><i class="fab fa-laravel"></i></div>
-                </div>
-            </div>
-            <div class="about-right">
-                <h2 class="section-heading">Turning complex<br><em>problems into</em><br>elegant code.</h2>
-                <p class="about-bio">Backend engineer with 2+ years building enterprise-grade platforms. I specialize in Laravel — from RESTful APIs and OAuth integrations to CRM systems and payment gateways. I care about clean architecture, fast queries, and shipping products that last.</p>
-                <div class="about-stats">
-                    <div class="stat-item"><span class="stat-num">2+</span><span class="stat-label">Years Experience</span></div>
-                    <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Projects Shipped</span></div>
-                    <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Technologies</span></div>
-                </div>
-                <div class="about-meta">
-                    <div class="meta-row"><i class="fas fa-map-marker-alt"></i> Bangalore, India</div>
-                    <div class="meta-row"><i class="fas fa-birthday-cake"></i> August 25, 2002</div>
-                    <div class="meta-row"><i class="fas fa-envelope"></i> dishantgondaliya25@gmail.com</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="skills">
-        <div class="section-label">— Skills</div>
-        <div class="section-top"><h2 class="section-heading">What I<br><em>work with</em></h2></div>
-        <div class="skills-grid">
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-laravel"></i><span>Laravel</span></div><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-php"></i><span>PHP</span></div><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-code"></i><span>RESTful API Development</span></div><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-database"></i><span>MySQL & Database Design</span></div><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-sync"></i><span>Ajax</span></div><span class="skill-pct">83%</span></div><div class="skill-track"><div class="skill-fill" data-w="83"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-bootstrap"></i><span>Bootstrap / Tailwind CSS</span></div><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-w="82"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fab fa-js"></i><span>JavaScript & jQuery</span></div><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-tachometer-alt"></i><span>Query Optimization</span></div><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill" data-w="80"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-credit-card"></i><span>Payment Gateway Integration</span></div><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill" data-w="78"></div></div></div>
-            <div class="skill-item"><div class="skill-info"><div class="skill-name-wrap"><i class="fas fa-shield-alt"></i><span>OAuth</span></div><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-w="75"></div></div></div>
-        </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="experience">
-        <div class="section-label">— Experience</div>
-        <div class="exp-layout">
-            <div class="exp-left">
-                <h2 class="section-heading">Where I've<br><em>been building</em></h2>
-            </div>
-            <div class="exp-right">
-                <div class="exp-card">
-                    <div class="exp-card-top">
-                        <div class="exp-logo-wrap"><i class="fas fa-laptop-code"></i></div>
-                        <div class="exp-meta">
-                            <span class="exp-badge">Current</span>
-                            <span class="exp-dates"><i class="fas fa-calendar-alt"></i> Dec 2024 – Present</span>
-                        </div>
-                    </div>
-                    <h3 class="exp-role">Laravel Developer</h3>
-                    <h4 class="exp-company">Bajarangi Soft</h4>
-                    <p class="exp-desc">Leading backend development on enterprise-level platforms including CRM systems, social media automation, and multi-tenant web applications. Focused on scalable architecture, API design, and performance optimization.</p>
-                    <div class="exp-tags"><span>Laravel</span><span>PHP</span><span>MySQL</span><span>REST APIs</span><span>OAuth</span></div>
-                </div>
-                <div class="exp-card edu-card">
-                    <div class="exp-card-top">
-                        <div class="exp-logo-wrap edu-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div class="exp-meta">
-                            <span class="exp-badge edu-badge">Education</span>
-                            <span class="exp-dates"><i class="fas fa-calendar-alt"></i> Jul 2020 – Mar 2023</span>
-                        </div>
-                    </div>
-                    <h3 class="exp-role">Bachelor's in Computer Application</h3>
-                    <h4 class="exp-company">The Future Computer Science College</h4>
-                    <p class="exp-desc">CGPA: <strong>6.7</strong> — Studied core computer science fundamentals, programming, database systems, and software engineering principles.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="projects">
-        <div class="section-label">— Projects</div>
-        <div class="section-top"><h2 class="section-heading">Featured<br><em>work</em></h2></div>
-        <div class="projects-grid">
-            <div class="proj-card"><div class="proj-num">01</div><div class="proj-icon-wrap"><i class="fas fa-users-cog"></i></div><h3>Torkehub</h3><p>CRM, Automation & Social Media Management System with multi-channel integrations and workflow automation.</p><div class="proj-tags"><span>Laravel</span><span>CRM</span><span>Automation</span></div><div class="proj-hover-line"></div></div>
-            <div class="proj-card"><div class="proj-num">02</div><div class="proj-icon-wrap"><i class="fas fa-calendar-check"></i></div><h3>JKB</h3><p>Comprehensive Event Management Platform handling scheduling, ticketing, and attendee management at scale.</p><div class="proj-tags"><span>Laravel</span><span>Events</span><span>Management</span></div><div class="proj-hover-line"></div></div>
-            <div class="proj-card"><div class="proj-num">03</div><div class="proj-icon-wrap"><i class="fas fa-dumbbell"></i></div><h3>The Gym Faction</h3><p>Fitness web application for workout tracking, member management, and progress analytics.</p><div class="proj-tags"><span>Laravel</span><span>Fitness</span><span>Web App</span></div><div class="proj-hover-line"></div></div>
-            <div class="proj-card"><div class="proj-num">04</div><div class="proj-icon-wrap"><i class="fas fa-building"></i></div><h3>Teknix</h3><p>B2B platform for elevator manufacturers to manage products, orders, and client relationships efficiently.</p><div class="proj-tags"><span>Laravel</span><span>Manufacturing</span><span>B2B</span></div><div class="proj-hover-line"></div></div>
-            <div class="proj-card"><div class="proj-num">05</div><div class="proj-icon-wrap"><i class="fas fa-industry"></i></div><h3>Forest Polska</h3><p>Manufacturer and distributor management system with supply chain tracking and inventory modules.</p><div class="proj-tags"><span>Laravel</span><span>Distribution</span><span>Supply Chain</span></div><div class="proj-hover-line"></div></div>
-            <div class="proj-card"><div class="proj-num">06</div><div class="proj-icon-wrap"><i class="fas fa-cross"></i></div><h3>Sanctus</h3><p>Virtual cemetery web application offering memorial pages, tributes, and family management tools.</p><div class="proj-tags"><span>Laravel</span><span>Memorial</span><span>Virtual</span></div><div class="proj-hover-line"></div></div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="section-label">— Contact</div>
-        <div class="contact-layout">
-            <div class="contact-left">
-                <h2 class="section-heading">Let's build<br><em>something</em><br>together.</h2>
-                <p class="contact-sub">Open to full-time roles, freelance projects, and interesting collaborations. Drop me a line.</p>
-                <div class="contact-details">
-                    <a href="tel:+919316113282" class="contact-link"><i class="fas fa-phone"></i><span>+91 93161 13282</span></a>
-                    <a href="mailto:dishantgondaliya25@gmail.com" class="contact-link"><i class="fas fa-envelope"></i><span>dishantgondaliya25@gmail.com</span></a>
-                    <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i><span>linkedin.com/in/dishant-gondaliya</span></a>
-                    <div class="contact-link no-link"><i class="fas fa-map-marker-alt"></i><span>Bangalore, India</span></div>
-                </div>
-            </div>
-            <div class="contact-right">
-                <div class="contact-form-wrap">
-                    <div class="form-field"><label>Your Name</label><input type="text" id="fname" placeholder="John Doe" class="form-inp"></div>
-                    <div class="form-field"><label>Email Address</label><input type="email" id="femail" placeholder="john@example.com" class="form-inp"></div>
-                    <div class="form-field"><label>Subject</label><input type="text" id="fsubject" placeholder="Project Inquiry" class="form-inp"></div>
-                    <div class="form-field"><label>Message</label><textarea id="fmessage" rows="5" placeholder="Tell me about your project..." class="form-inp"></textarea></div>
-                    <button class="btn-glow" id="sendBtn" onclick="handleSend()"><span>Send Message</span> <i class="fas fa-paper-plane"></i></button>
-                    <div id="formMsg" class="form-message"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-left">
-                <span class="logo">DG</span>
-                <p>© 2024 Dishant Gondaliya. All Rights Reserved.</p>
-            </div>
-            <div class="footer-right">
-                <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:dishantgondaliya25@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+919316113282"><i class="fas fa-phone"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <i class="fas fa-arrow-up"></i>
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">D<span>.</span>G</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-a"><span class="nn">01</span>Home</a></li>
+      <li><a href="#about" class="nav-a"><span class="nn">02</span>About</a></li>
+      <li><a href="#skills" class="nav-a"><span class="nn">03</span>Skills</a></li>
+      <li><a href="#experience" class="nav-a"><span class="nn">04</span>Experience</a></li>
+      <li><a href="#projects" class="nav-a"><span class="nn">05</span>Projects</a></li>
+      <li><a href="#contact" class="nav-a"><span class="nn">06</span>Contact</a></li>
+    </ul>
+    <button class="hbg" id="hbg" aria-label="Toggle menu">
+      <span></span><span></span>
     </button>
+  </div>
+</nav>
 
-    <script src="script.js"></script>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-dots"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow hero-el" style="--d:0.1s">
+      <span class="blink-dot"></span>Available for opportunities
+    </div>
+
+    <h1 class="hero-name hero-el" style="--d:0.22s">
+      Dishant<br><em>Gondaliya</em>
+    </h1>
+
+    <div class="hero-role-wrap hero-el" style="--d:0.38s">
+      <span class="role-bar"></span>
+      <span id="typed">Laravel Developer</span>
+      <span class="type-cursor">|</span>
+    </div>
+
+    <p class="hero-desc hero-el" style="--d:0.54s">
+      2 years crafting robust, scalable web applications — from backend architecture to seamless user experiences. I build things that last.
+    </p>
+
+    <div class="hero-btns hero-el" style="--d:0.68s">
+      <a href="#contact" class="btn-primary">Let's Talk <i class="fas fa-arrow-right" style="font-size:0.8rem"></i></a>
+      <a href="#projects" class="btn-outline">View Work</a>
+    </div>
+
+    <div class="hero-chips hero-el" style="--d:0.82s">
+      <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank" class="chip"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:dishantgondaliya25@gmail.com" class="chip"><i class="fas fa-envelope"></i> Email</a>
+      <a href="tel:+919316113282" class="chip"><i class="fas fa-phone"></i> Call</a>
+    </div>
+  </div>
+
+  <div class="hero-right hero-el" style="--d:0.3s">
+    <div class="hero-visual">
+      <div class="hv-ring"><div class="hv-ring-dot"></div></div>
+      <div class="hv-ring-2"></div>
+      <div class="hv-center">
+        <div class="hv-icon"><i class="fas fa-user"></i></div>
+        <div class="hv-label">Laravel Developer</div>
+      </div>
+      <div class="hv-badge hv-badge-1">
+        <i class="fab fa-laravel" style="font-size:1.6rem"></i>
+        <div>
+          <div class="badge-val">2+</div>
+          <div class="badge-sub">Years</div>
+        </div>
+      </div>
+      <div class="hv-badge hv-badge-2">
+        <i class="fas fa-star" style="font-size:1.2rem"></i>
+        <div>
+          <div class="badge-val">6</div>
+          <div class="badge-sub">Projects</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-l"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="sec-label">About Me</div>
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="av-card">
+          <div class="av-decorative"></div>
+          <div class="av-avatar">
+            <i class="fas fa-user"></i>
+            <div class="av-badge"><i class="fab fa-laravel" style="color:#f55247;font-size:1rem"></i></div>
+          </div>
+          <div class="av-name">Dishant Gondaliya</div>
+          <div class="av-title">Laravel Developer</div>
+          <div class="av-stats">
+            <div class="av-stat"><span class="av-stat-n">2+</span><span class="av-stat-l">Years</span></div>
+            <div class="av-stat"><span class="av-stat-n">6</span><span class="av-stat-l">Projects</span></div>
+            <div class="av-stat"><span class="av-stat-n">10+</span><span class="av-stat-l">Tech</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <div class="sec-h">Turning complex<br><em>problems into</em><br>elegant code.</div>
+        <p class="about-p">Backend engineer with 2+ years building enterprise-grade platforms. I specialize in Laravel — from RESTful APIs and OAuth integrations to CRM systems and payment gateways. I care about clean architecture, fast queries, and shipping products that last.</p>
+        <div class="meta-list">
+          <div class="meta-item"><i class="fas fa-map-marker-alt"></i><strong>Location</strong> Bangalore, India</div>
+          <div class="meta-item"><i class="fas fa-birthday-cake"></i><strong>Born</strong> August 25, 2002</div>
+          <div class="meta-item"><i class="fas fa-envelope"></i><strong>Email</strong> dishantgondaliya25@gmail.com</div>
+          <div class="meta-item"><i class="fas fa-briefcase"></i><strong>Status</strong> Open to opportunities</div>
+        </div>
+        <a href="#contact" class="btn-primary" style="width:fit-content">Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="inner">
+    <div class="skills-intro">
+      <div class="skills-intro-text reveal">
+        <div class="sec-label">Skills</div>
+        <div class="sec-h">What I<br><em>work with</em></div>
+      </div>
+      <div class="reveal" style="padding-top:80px">
+        <p class="skills-intro-sub">A focused stack built around PHP & Laravel, with full-stack capabilities spanning databases, APIs, and frontend technologies.</p>
+        <br>
+        <div class="skills-categories">
+          <span class="sk-cat active">Backend</span>
+          <span class="sk-cat">Database</span>
+          <span class="sk-cat">Frontend</span>
+          <span class="sk-cat">Integration</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fab fa-laravel"></i><span>Laravel</span></div><span class="sk-pct">90%</span></div><div class="sk-track"><div class="sk-fill sk-fill-gold" data-w="90"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fab fa-php"></i><span>PHP</span></div><span class="sk-pct">88%</span></div><div class="sk-track"><div class="sk-fill sk-fill-gold" data-w="88"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fas fa-code"></i><span>RESTful API Development</span></div><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill sk-fill-rust" data-w="85"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fas fa-database"></i><span>MySQL & Database Design</span></div><span class="sk-pct">85%</span></div><div class="sk-track"><div class="sk-fill sk-fill-rust" data-w="85"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fas fa-sync"></i><span>Ajax</span></div><span class="sk-pct">83%</span></div><div class="sk-track"><div class="sk-fill sk-fill-sage" data-w="83"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fab fa-bootstrap"></i><span>Bootstrap / Tailwind CSS</span></div><span class="sk-pct">82%</span></div><div class="sk-track"><div class="sk-fill sk-fill-sage" data-w="82"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fab fa-js"></i><span>JavaScript & jQuery</span></div><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill sk-fill-blue" data-w="80"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fas fa-tachometer-alt"></i><span>Query Optimization</span></div><span class="sk-pct">80%</span></div><div class="sk-track"><div class="sk-fill sk-fill-blue" data-w="80"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fas fa-credit-card"></i><span>Payment Gateway Integration</span></div><span class="sk-pct">78%</span></div><div class="sk-track"><div class="sk-fill sk-fill-gold" data-w="78"></div></div></div>
+      <div class="skill-row reveal"><div class="sk-top"><div class="sk-name"><i class="fas fa-shield-alt"></i><span>OAuth</span></div><span class="sk-pct">75%</span></div><div class="sk-track"><div class="sk-fill sk-fill-gold" data-w="75"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="inner">
+    <div class="exp-wrap">
+      <div class="exp-left-sticky reveal-left">
+        <div class="sec-label">Experience</div>
+        <div class="sec-h">Where I've<br><em>been building</em></div>
+        <p class="exp-left-sub">My professional journey building real-world products across enterprise and startup environments.</p>
+        <div class="exp-timeline-indicator">
+          <div class="eti-item active">
+            <div class="eti-dot"></div>
+            <div>
+              <div class="eti-label">Bajarangi Soft</div>
+              <div style="font-size:0.8rem;color:var(--ink-3);margin-top:2px;">Dec 2024 – Present</div>
+            </div>
+          </div>
+          <div class="eti-item">
+            <div class="eti-dot"></div>
+            <div>
+              <div class="eti-label">BCA Degree</div>
+              <div style="font-size:0.8rem;color:var(--ink-3);margin-top:2px;">Jul 2020 – Mar 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-cards">
+        <div class="exp-card reveal">
+          <div class="ec-stripe"></div>
+          <div class="ec-top">
+            <div class="ec-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="ec-meta">
+              <span class="ec-badge">Current Role</span>
+              <span class="ec-dates"><i class="fas fa-calendar-alt"></i> Dec 2024 – Present</span>
+            </div>
+          </div>
+          <div class="ec-role">Laravel Developer</div>
+          <div class="ec-company">Bajarangi Soft</div>
+          <p class="ec-desc">Leading backend development on enterprise-level platforms including CRM systems, social media automation, and multi-tenant web applications. Focused on scalable architecture, API design, and performance optimization.</p>
+          <div class="ec-tags">
+            <span class="ec-tag">Laravel</span><span class="ec-tag">PHP</span><span class="ec-tag">MySQL</span><span class="ec-tag">REST APIs</span><span class="ec-tag">OAuth</span><span class="ec-tag">Multi-tenant</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="ec-stripe edu"></div>
+          <div class="ec-top">
+            <div class="ec-icon edu-i"><i class="fas fa-graduation-cap"></i></div>
+            <div class="ec-meta">
+              <span class="ec-badge edu">Education</span>
+              <span class="ec-dates"><i class="fas fa-calendar-alt"></i> Jul 2020 – Mar 2023</span>
+            </div>
+          </div>
+          <div class="ec-role">Bachelor of Computer Application</div>
+          <div class="ec-company" style="color:var(--blue)">The Future Computer Science College</div>
+          <p class="ec-desc">CGPA: <strong>6.7</strong> — Studied core computer science fundamentals, programming, database systems, and software engineering principles. Built strong foundations in algorithms, OOP, and web technologies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="inner">
+    <div class="sec-label">Projects</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;">
+      <div class="sec-h reveal">Featured<br><em>work</em></div>
+      <p class="reveal" style="color:var(--ink-3);font-size:0.9rem;max-width:280px;text-align:right;line-height:1.7;">Real products shipped for real clients across diverse industries.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card reveal"><div class="proj-num">01</div><div class="pj-icon"><i class="fas fa-users-cog"></i></div><div class="proj-h">Torkehub</div><p class="proj-p">CRM, Automation & Social Media Management System with multi-channel integrations and workflow automation for marketing teams.</p><div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">CRM</span><span class="proj-tag">Automation</span></div></div>
+      <div class="proj-card reveal"><div class="proj-num">02</div><div class="pj-icon"><i class="fas fa-calendar-check"></i></div><div class="proj-h">JKB</div><p class="proj-p">Comprehensive Event Management Platform handling scheduling, ticketing, and attendee management at enterprise scale.</p><div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">Events</span><span class="proj-tag">Management</span></div></div>
+      <div class="proj-card reveal"><div class="proj-num">03</div><div class="pj-icon"><i class="fas fa-dumbbell"></i></div><div class="proj-h">The Gym Faction</div><p class="proj-p">Fitness web application for workout tracking, member management, and progress analytics with subscription billing.</p><div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">Fitness</span><span class="proj-tag">Web App</span></div></div>
+      <div class="proj-card reveal"><div class="proj-num">04</div><div class="pj-icon"><i class="fas fa-building"></i></div><div class="proj-h">Teknix</div><p class="proj-p">B2B platform for elevator manufacturers to manage products, orders, and client relationships efficiently across regions.</p><div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">Manufacturing</span><span class="proj-tag">B2B</span></div></div>
+      <div class="proj-card reveal"><div class="proj-num">05</div><div class="pj-icon"><i class="fas fa-industry"></i></div><div class="proj-h">Forest Polska</div><p class="proj-p">Manufacturer and distributor management system with supply chain tracking, inventory modules, and logistics reporting.</p><div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">Distribution</span><span class="proj-tag">Supply Chain</span></div></div>
+      <div class="proj-card reveal"><div class="proj-num">06</div><div class="pj-icon"><i class="fas fa-cross"></i></div><div class="proj-h">Sanctus</div><p class="proj-p">Virtual cemetery web application offering memorial pages, tributes, and family management tools for remembrance.</p><div class="proj-tags"><span class="proj-tag">Laravel</span><span class="proj-tag">Memorial</span><span class="proj-tag">Virtual</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="contact-wrap">
+      <div class="contact-left reveal-left">
+        <div class="sec-label">Contact</div>
+        <div class="sec-h">Let's build<br><em>something</em><br>together.</div>
+        <p class="contact-sub">Open to full-time roles, freelance projects, and interesting collaborations. Drop me a line.</p>
+        <div class="contact-links">
+          <a href="tel:+919316113282" class="c-link">
+            <div class="c-icon-wrap"><i class="fas fa-phone"></i></div>
+            <span>+91 93161 13282</span>
+          </a>
+          <a href="mailto:dishantgondaliya25@gmail.com" class="c-link">
+            <div class="c-icon-wrap"><i class="fas fa-envelope"></i></div>
+            <span>dishantgondaliya25@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank" class="c-link">
+            <div class="c-icon-wrap"><i class="fab fa-linkedin"></i></div>
+            <span>linkedin.com/in/dishant-gondaliya</span>
+          </a>
+          <div class="c-link no-link">
+            <div class="c-icon-wrap"><i class="fas fa-map-marker-alt"></i></div>
+            <span>Bangalore, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-form">
+          <div class="ff">
+            <label>Your Name</label>
+            <input type="text" id="fname" placeholder="John Doe" class="fi">
+          </div>
+          <div class="ff">
+            <label>Email Address</label>
+            <input type="email" id="femail" placeholder="john@example.com" class="fi">
+          </div>
+          <div class="ff">
+            <label>Subject</label>
+            <input type="text" id="fsubj" placeholder="Project Inquiry" class="fi">
+          </div>
+          <div class="ff">
+            <label>Message</label>
+            <textarea id="fmsg-ta" rows="5" placeholder="Tell me about your project..." class="fi"></textarea>
+          </div>
+          <button class="btn-primary" id="send-btn" onclick="sendMsg()" style="width:100%;justify-content:center;">
+            <span>Send Message</span> <i class="fas fa-paper-plane" style="font-size:0.8rem"></i>
+          </button>
+          <div id="fmsg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">D<span>.</span>G</div>
+    <p class="footer-copy">© 2025 Dishant Gondaliya. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/dishant-gondaliya-792178271/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:dishantgondaliya25@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="tel:+919316113282"><i class="fas fa-phone"></i></a>
+    </div>
+  </div>
+</footer>
+
+<button id="stop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+<script src="script.js"></script>
 </body>
 </html>
